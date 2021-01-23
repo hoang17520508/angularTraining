@@ -7,6 +7,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-
+// khai báo AppModule là module khỏi chạy đầu tiên của ứng dụng
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
