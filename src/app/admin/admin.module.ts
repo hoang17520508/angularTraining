@@ -5,13 +5,15 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { UserComponent } from './user/user.component';
 import { MovieComponent } from './movie/movie.component';
 import { LayoutComponent } from './layout/layout.component';
-
+import {ReactiveFormsModule} from '@angular/forms';
+import { AddmovieComponent } from './addmovie/addmovie.component'
 
 @NgModule({
-  declarations: [UserComponent, MovieComponent, LayoutComponent],
+  declarations: [UserComponent, MovieComponent, LayoutComponent, AddmovieComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

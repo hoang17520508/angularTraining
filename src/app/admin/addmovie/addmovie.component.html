@@ -1,0 +1,55 @@
+<div class="container">
+  <h1 class="text-center">Add Movie</h1>
+  <div class="col-sm-6 mx-auto">
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+
+      <div class="form-group">
+        <label>
+          Ten Phim
+        </label>
+        <input type="text" class="form-control" formControlName="tenPhim" />
+
+      </div>
+      <div class="form-group">
+        <label>
+          Bi danh
+        </label>
+        <input type="text" class="form-control" formControlName="biDanh" />
+
+      </div>
+
+      <div class="form-group">
+        <label>
+          Traier
+        </label>
+        <input type="text" class="form-control-file" formControlName="trailer" />
+
+      </div>
+      <div class="form-group">
+        <label>
+          hinh anh
+        </label>
+        <input type="file" class="form-control-file" (change)="handleChangeFile($event)" />
+
+      </div>
+      <div class="form-group">
+        <label>
+          Mo ta
+        </label>
+        <input type="text" class="form-control" formControlName="moTa" />
+
+      </div>
+      <div class="form-group">
+        <label>
+          Ngay khoi chieu
+        </label>
+        <input type="text" class="form-control" formControlName="ngayKhoiChieu" />
+
+      </div>
+      <button class="btn btn-success">Them phim</button>
+
+    </form>
+
+  </div>
+
+</div>

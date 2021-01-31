@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from './core/guards/admin.guard';
+import { BookingGuard } from './core/guards/booking.guard';
 
 // import { Baitap2Component } from './baitap2/baitap2.component';
 // import { Baitap8Component } from './baitap8/baitap8.component';
@@ -14,8 +16,8 @@ const routes: Routes = [
   // {path:"baitap2",component:Baitap2Component},
   // // {path:"baitap8",component:Baitap8Component},
   // {path:"baitap8",loadChildren:()=>Baitap8Module},
-  {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule)},
-  {path:'',loadChildren:()=>import('./main/main.module').then((m)=>m.MainModule)}
+  {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule),canActivate:[AdminGuard]},
+  {path:'',loadChildren:()=>import('./main/main.module').then((m)=>m.MainModule),canActivate:[BookingGuard]}
 
   //pathMatch : 'full' tuong tu exact ben react
   // khi gắn module vào router  không cần gắn vào mảng imports của modilde đó nx nha nha !!

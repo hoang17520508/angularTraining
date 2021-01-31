@@ -8,7 +8,11 @@
   <div class="card-body">
     <h4 class="card-title">{{movie.tenPhim}}</h4>
     <p class="card-text">{{movie.ngayKhoiChieu}}</p>
-    <button class="btn btn-success" routerLink="/movie/{{movie.maPhim}}" >Chi Tiết</button>
+    <button mat-raised-button color="warn" routerLink="/movie/{{movie.maPhim}}" >Chi Tiết</button>
+    <p class="card-text">{{0.5|percent}}</p>
+    <p class="card-text">{{10000|currency:'VND'}}</p>
+    <pre class="card-text">{{movie|json|shortcut}}</pre>
+    <p class="card-text">{{movie.ngayKhoiChieu|date:"dd/MM/yyyy h:mm:ss"}}</p>
   </div>
 </div>
 

@@ -1,0 +1,38 @@
+<h1 class="text-center">SignIn</h1>
+<div class="container">
+<div class="row">
+  <div class="text-left col-12" >
+<form [formGroup]="signinForm" (ngSubmit)="handleSignin()">
+  <div class="form-group">
+    <label >Tài Khoản</label>
+    <input type="text"   id="" class="form-control" formControlName="taiKhoan">
+    <app-error-messgae name="taiKhoan" [control]="signinForm.get('taiKhoan')">
+
+    </app-error-messgae>
+    <!-- <div *ngIf="signinForm.get('taiKhoan')?.invalid && (signinForm.get('taiKhoan')?.dirty ||signinForm.get('taiKhoan')?.touched)" class="alert alert-danger">
+      <span *ngIf="signinForm.get('taiKhoan')?.errors?.required">Tài Khoản không được bỏ trống</span>
+      <span *ngIf="signinForm.get('taiKhoan')?.errors?.minlength && signinForm.get('taiKhoan')?.errors?.maxlenght">
+Tài Khoản từ 3-20
+      </span>
+
+    </div> -->
+
+  </div>
+  <div class="form-group">
+    <label >Mật Khẩu</label>
+    <input type="text"  id="" class="form-control" formControlName="matKhau" >
+    <div *ngIf="signinForm.get('matKhau')?.invalid && (signinForm.get('matKhau')?.dirty ||signinForm.get('matKhau')?.touched)" class="alert alert-danger">
+      <span *ngIf="signinForm.get('matKhau')?.errors?.required">Tài Khoản không được bỏ trống</span>
+      <span *ngIf="signinForm.get('matKhau')?.errors?.minlength && signinForm.get('matKhau')?.errors?.maxlenght">
+       Tài Khoản từ 3-20
+      </span>
+
+    </div>
+
+  </div>
+  <button class="btn btn-success">Đăng nhập</button>
+</form>
+  </div>
+
+</div>
+</div>

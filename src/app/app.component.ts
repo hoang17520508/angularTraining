@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import {AuthService} from 'src/app/core/services/auth.service'
 
 @Component({
   selector: 'app-root',//tên component sẽ nhúng vào html
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
+  constructor(private auth:AuthService){}
+  ngOnInit(){
+    const user=localStorage.getItem('user')
+    if(user){
+      this.auth.currentUser.next(JSON.parse(user));
+    }
+  }
   title = 'my-dream-app';
 }
 

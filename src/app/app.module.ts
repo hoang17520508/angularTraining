@@ -12,7 +12,9 @@ import {Baitap8Module} from './baitap8/baitap8.module';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { StructuraldirectiveComponent } from './structuraldirective/structuraldirective.component';
 import { AttributedirectiveComponent } from './attributedirective/attributedirective.component'
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http'
+import { AuthInterceptor } from './core/interceptor/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
 
   //nơi khai báo các component được quản lý bởi module
@@ -39,10 +41,13 @@ import {HttpClientModule} from '@angular/common/http'
     Baitap4Module,
     Baitap8Module,
     HttpClientModule,
+    BrowserAnimationsModule,
 
 
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
 
   //khai báo appcomponent là componenet khởi chạy đầu tiên của module
   // các module khác do mình tự tạo sẽ không có phần này
